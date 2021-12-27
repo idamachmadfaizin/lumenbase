@@ -60,6 +60,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$debug = env('APP_DEBUG', true);
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +95,8 @@ $app->configure('app');
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+if ($debug)
+    $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
