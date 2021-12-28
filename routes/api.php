@@ -16,3 +16,5 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+require __DIR__.'/oauth.php';
