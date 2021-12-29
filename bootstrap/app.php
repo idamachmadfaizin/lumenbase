@@ -102,6 +102,7 @@ $app->routeMiddleware([
 if ($debug) {
     $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 }
+$app->register(\Anik\Form\FormRequestServiceProvider::class);
 $app->register(Laravel\Passport\PassportServiceProvider::class);
 $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 

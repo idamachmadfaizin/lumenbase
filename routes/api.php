@@ -18,3 +18,4 @@ $router->get('/', function () use ($router) {
 });
 
 require __DIR__.'/oauth.php';
+require __DIR__.'/auth.php';
