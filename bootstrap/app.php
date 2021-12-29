@@ -115,9 +115,13 @@ $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 | can respond to, as well as the controllers that may handle them.
 |
 */
+$appPrefix = env('APP_PREFIX', '');
+$appVersion = env('APP_VERSION', '');
+$prefix = $appPrefix . ($appVersion ? "/{$appVersion}" : "");
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
+    'prefix' => $prefix,
 ], function ($router) {
     require __DIR__.'/../routes/api.php';
 });
